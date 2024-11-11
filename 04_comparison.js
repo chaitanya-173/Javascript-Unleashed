@@ -12,4 +12,3 @@ console.log(undefined > 0)  // false
 console.log("2" === 2)  // false  (checks datatypes also)
 
 /* These types of comparisons should be avoided in most of the cases */
-
