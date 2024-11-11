@@ -1,7 +1,7 @@
-const accountId = 144553  //preferred
-let accountEmail = "chaitanyachaudhary73@gmail.com"  //preferred
+const accountId = 144553  // preferred
+let accountEmail = "chaitanyachaudhary73@gmail.com"  // preferred
 var accountPassword = "12345"
-accountCity = "Noida"  //shouldn't be used
+accountCity = "Noida"  // shouldn't be used
 let accountState;
 
 accountEmail = "chaitanya23nov@gmail.com"
