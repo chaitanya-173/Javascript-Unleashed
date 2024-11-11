@@ -15,7 +15,7 @@ console.log(typeof userEmail)  // undefined
 console.log(typeof id)  // symbol
 
 
-// Reference (non-primitive) => Array, Objects, Functions
+// Reference (Non-Primitive) => Array, Objects, Functions
 
 const heros = ["spiderman", "batman", "superman"]  // Array
 
@@ -28,11 +28,39 @@ const myFunction = function() {  // Function
     console.log("Hello world");
 }
 
-console.log(typeof heros)  // object
-console.log(typeof myObj)  // object
-console.log(typeof myFunction)  // function (called function object)
+console.log(typeof heros);  // object
+console.log(typeof myObj);  // object
+console.log(typeof myFunction);  // function (called function object)
 
 /* Datatype of non-primitive is object */
+
+
+// ***************************************************************************
+
+// Stack (Primitive), Heap (Non - Primitive)
+
+//Stack
+let myYoutubeName = "chaitanyadotcom"
+let anotherName = myYoutubeName
+anotherName = "chaitanyanewone"
+
+console.log(myYoutubeName);
+console.log(anotherName);
+
+//Heap
+let userOne = {
+    email: "user@google.com",
+    upi: "user@ybl"
+}
+
+let userTwo = userOne
+
+userTwo.email = "chaitanya@google.com"
+
+console.log(userOne.email);
+
+
+
 
 
 
