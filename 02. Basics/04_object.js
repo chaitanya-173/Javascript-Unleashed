@@ -35,7 +35,7 @@ const users = [    // array of objects
 console.log(users[1].email);               // myself@gmail.com
 
 
-// ****** Methods in objects *******
+// ********** Methods in objects ***********
 
 const obj1 = {1: "a", 2: "b"}
 const obj2 = {3: "a", 4: "b"}
@@ -56,4 +56,31 @@ console.log(Object.values(obj6));                  // [ 'a', 'b', 'a', 'b', 'a',
 console.log(Object.entries(obj6));                // => returns an array of key-value pair arrays
 
 console.log(obj6.hasOwnProperty("7"));            // false
+
+
+// ********** Object Destructuring and JSON API **********
+
+const course = {
+    courseName: "Javascript and Chai",
+    price: 999,
+    courseInstructor: "Hitesh"
+}
+// course.courseInstructor
+const {courseInstructor: instructor} = course
+console.log(instructor);                          // Hitesh
+
+// JSON (Javascript Object Notation)
+
+// {
+//     "name": "Chaitanya",
+//     "coursename": "JS with Chai",
+//     "price": "free"
+// }
+
+[
+    {},
+    {},
+    {}
+]
+
 
