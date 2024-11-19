@@ -7,7 +7,7 @@
     console.log(`DB Connected`)
 })();  // semicolon necessary to end
 
-( () => {                                      // Arrow function as an IIFE
+( () => {                                      // Arrow function as an IIFEA
     console.log(`DB connected two`)
 })();
 
