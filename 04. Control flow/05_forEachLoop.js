@@ -47,7 +47,7 @@ const values = myCoding.forEach( (item) => {
 })
 console.log(values);  // undefined
 
-// forEach loop doesn' return any value 
+// forEach loop doesn't return any value 
 
 
 
@@ -89,6 +89,6 @@ console.log(userBooks1);
 console.log(userBooks2);
 
 const userBooks3 = books.filter( (bk) => {
-    return bk.publish >= 1995 && bk.genre === "History"
+    return (bk.publish >= 1995 && bk.genre === "History")
 })
 console.log(userBooks3);
