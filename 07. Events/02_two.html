@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeOuts and Intervals</title>
+</head>
+<body>
+    <h1>Javascript</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    console.log("hi")
+
+    const sayChaitanya = function() {  // handler / function / call back
+        console.log("Chaitanya")
+    }
+    setTimeout(sayChaitanya, 2000);   // give reference [sayChaitanya] not execute like [sayChaitanya()]
+
+    const changeText = function() {
+        document.querySelector('h1').innerHTML = "Learning Javascript";
+    }
+    const changeMe = setTimeout(changeText, 4000); 
+    
+    document.querySelector('#stop').addEventListener('click', function() {
+        clearTimeout(changeMe);   // to stop changing the text when button is clicked
+        console.log("Stopped");
+    })
+
+</script>
+</html>
