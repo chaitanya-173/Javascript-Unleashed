@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul> "readyState" represents the state of the request. The possible values are:  
+        <li>0: Request not initialized. open() not called yet.</li>
+        <li>1: Server connection established. open() has been called.</li>
+        <li>2: Request received by the server.</li>
+        <li>3: Server is processing the request.</li>
+        <li>4: Request finished, response is ready.</li>
+    </ul>
+</body>
+<script>
+    // XMLHttpRequest is a built in Web API which provides a way for JS code to communicate with server over HTTP or HTTPS
+    // It is basically a process to exchange data between browser and server (asynchronous process)
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary'      // API definition
+    const xhr = new XMLHttpRequest();                                      // Creation of XHR (XMLHttpRequest) object
+    xhr.open('GET', requestUrl);                                           // Opening a connection
+    xhr.onreadystatechange = function(){           // "onreadystatechange" is an event handler that triggers every time the 
+        console.log(xhr.readyState);               // readyState of the xhr object changes.
+        if (xhr.readyState === 4) {                                        // Checks if the request has completed
+            const data = JSON.parse(this.responseText)    // Converts the server's JSON response (responseText) into JS object using JSON.parse.
+            console.log(typeof data);
+            console.log(data.followers);
+        }
+    }
+</script>
+</html>
+
+

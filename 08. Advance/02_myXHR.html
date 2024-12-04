@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XHR</title>
+</head>
+<body>
+    <ul> "readyState" represents the state of the request. The possible values are:  
+        <li>0: Request not initialized. open() not called yet.</li>
+        <li>1: Server connection established. open() has been called.</li>
+        <li>2: Request received by the server.</li>
+        <li>3: Server is processing the request.</li>
+        <li>4: Request finished, response is ready.</li>
+    </ul>
+</body>
+<script>
+    
+    const xhr = new XMLHttpRequest();
+    console.log(`${xhr.readyState} : Request not initialised`);
+
+    xhr.open('GET', 'https://api.github.com/users/hiteshchoudhary', true);
+    console.log(`${xhr.readyState} : Server connection established`);
+    
+    xhr.onreadystatechange = function() {
+        if(xhr.readyState === 2) {
+            console.log(`${xhr.readyState} : Request received by server`); 
+        }
+        if (xhr.readyState === 3) {
+            console.log(`${xhr.readyState} : Processing response, data is being sent`);
+        }
+        if (xhr.readyState === 4) {  // Response is ready
+            console.log(xhr.readyState);
+            if (xhr.status === 200) {  // Successful response                             
+                console.log('Request complete, response ready');
+                const data = JSON.parse(this.responseText);  // convert default text (string) received into object
+                console.log(data);
+                console.log(typeof data);
+                console.log(`Name: ${data.name}`);
+                console.log(`Followers: ${data.followers}`);
+                console.log(data.html_url);                
+            } else {
+                console.error('Request failed with status:', xhr.status, xhr.statusText);
+            }
+        }
+    }
+
+    xhr.send();
+
+    /*
+    If the request succeeds:  xhr.status === 200: The response is handled.
+    If the resource doesn’t exist:  xhr.status === 404: Show an error message.
+    If the server is down:  xhr.status === 500: Log a server error.
+    */
+
+</script>
+</html>
