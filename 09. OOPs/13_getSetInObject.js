@@ -1,3 +1,5 @@
+// Rarely used and not recommended
+
 const User = {
     _email: 'cc@xyz.com',
     _password: "abc",
