@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure aur chai</title>
+</head>
+<body style="background-color: #313131;">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+
+<script>
+
+    // CLOSURE means : jab hum poora ka poora function he return kar dete hain toh sirf 
+    // function return nahi hota, uska poora "LEXICAL SCOPE" return hota hai.
+
+    // function outer(){
+    //     let username = "hitesh"
+    //     console.log("OUTER", secret);
+    //     function inner(){
+    //         let secret = "my123"
+    //         console.log("inner", username);
+    //     }
+    //     function innerTwo(){
+    //         console.log("innerTwo", username);
+    //         console.log(secret);
+    //     }
+    //     inner()
+    //     innerTwo()
+
+    // }
+    // outer()
+    // console.log("TOO OUTER", username);
+
+
+    // function makeFunc() {
+    //     const name = "Mozilla";
+    //     function displayName() {
+    //         console.log(name);
+    //     }
+    //     return displayName;
+    // }
+                                     // On making call of makeFunc(): not only 'displayName' function
+    // const myFunc = makeFunc();    // will return but also its whole lexical scope will return
+    // myFunc();                     // i.e. function 'displayName' along with variable 'name'
+
+</script>
+
+<script>
+
+    // document.getElementById("orange").onclick = function(){
+    //     document.body.style.backgroundColor = `orange`
+    // }
+    // document.getElementById("green").onclick = function(){
+    //     document.body.style.backgroundColor = `green`
+    // }
+
+    function clickHandler(color){
+        // document.body.style.backgroundColor = `${color}`
+
+        return function(){           // according to lexical scoping, it will return the function 
+            document.body.style.backgroundColor = `${color}`  // along with 'color' in the outer function
+        }
+    }
+
+    document.getElementById('orange').onclick = clickHandler("orange")
+    document.getElementById('green').onclick = clickHandler("green")
+
+</script>
+</html>
